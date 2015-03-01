@@ -39,13 +39,14 @@ codes = {'.-': 'A',     '-...': 'B',   '-.-.': 'C',
 def exe(message):
 	server = getSMTP()
 	message = message.replace('\n', '').replace('\r', '')
-	arr = message.split(' ')
-	x = ""
-	for i in arr:
-    	if i in codes:
-        	x+=codes[i]
-    	else:
-        	x+="?"
+	if not (message.replace(' ', '').isalpha()):
+	    arr = message.split(' ')
+	    x = ""
+	    for i in arr:
+    	    if i in codes:
+        	    x+=codes[i]
+    	    else:
+        	    x+="?"
 
 	server.sendmail('New message!', '********', x);
 
