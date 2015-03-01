@@ -43,10 +43,12 @@ def exe(message):
 	    arr = message.split(' ')
 	    x = ""
 	    for i in arr:
-    	    if i in codes:
-        	    x+=codes[i]
-    	    else:
-        	    x+="?"
+            if i in codes:
+                x+=codes[i]
+            else:
+                x+="?"
+    else:
+        x = message
 
 	server.sendmail('New message!', '********', x);
 
