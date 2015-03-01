@@ -24,7 +24,7 @@ def getSMTP():
 codes = {'.-': 'A',     '-...': 'B',   '-.-.': 'C', 
         '-..': 'D',    '.': 'E',      '..-.': 'F',
         '--.': 'G',    '....': 'H',   '..': 'I',
-        '.---': 'J',   '-.-''K': ,    '.-..': 'L',
+        '.---': 'J',   '-.-': 'K',    '.-..': 'L',
         '--': 'M',     '-.': 'N',     '---': 'O',
         '.--.': 'P',   '--.-': 'Q',   '.-.': 'R',
      	'...': 'S',    '-': 'T',      '..-': 'U',
@@ -40,14 +40,12 @@ def exe(message):
 	server = getSMTP()
 	arr = message.split(' ')
 	x = ""
-	if '-' in arr:
-		for i in arr:
-			if i in codes:
-				x+=codes[i]
-			else:
-				x+="?"
-	else:
-		x = message
+	for i in arr:
+    	if i in codes:
+        	print i
+        	x+=codes[i]
+    	else:
+        	x+="?"
 
 	server.sendmail('New message!', '********', x);
 
