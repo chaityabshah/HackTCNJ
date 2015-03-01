@@ -39,10 +39,10 @@ codes = {'.-': 'A',     '-...': 'B',   '-.-.': 'C',
 def exe(message):
 	server = getSMTP()
 	message = message.replace('\n', '').replace('\r', '')
-	if not (message.replace(' ', '').isalpha()):
+    if not (''.join([i for i in message if not i.isdigit()]).replace(' ', '').isalpha()):
 	    arr = message.split(' ')
 	    x = ""
-	    for i in arr:
+        for i in arr:
             if i in codes:
                 x+=codes[i]
             else:
