@@ -21,10 +21,35 @@ def getSMTP():
 		print 'Invalid GMail Information Provided...'
 		sys.exit()
 	return server;
-
+codes = {'.-': 'A',     '-...': 'B',   '-.-.': 'C', 
+        '-..': 'D',    '.': 'E',      '..-.': 'F',
+        '--.': 'G',    '....': 'H',   '..': 'I',
+        '.---': 'J',   '-.-''K': ,    '.-..': 'L',
+        '--': 'M',     '-.': 'N',     '---': 'O',
+        '.--.': 'P',   '--.-': 'Q',   '.-.': 'R',
+     	'...': 'S',    '-': 'T',      '..-': 'U',
+        '...-': 'V',   '.--': 'W',    '-..-': 'X',
+        '-.--': 'Y',   '--..': 'Z',
+        
+        '-----': '0',  '.----': '1',  '..---': '2',
+        '...--': '3',  '....-': '4',  '.....': '5',
+        '-....': '6',  '--...': '7',  '---..': '8',
+        '----.': '9' 
+        }
 def exe(message):
 	server = getSMTP()
-	server.sendmail('New message!', '********', message);
+	arr = message.split(' ')
+	x = ""
+	if '-' in arr:
+		for i in arr:
+			if i in codes:
+				x+=codes[i]
+			else:
+				x+="?"
+	else:
+		x = message
+
+	server.sendmail('New message!', '********', x);
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=80)
