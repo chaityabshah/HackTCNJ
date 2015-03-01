@@ -5,13 +5,13 @@
     <div class="col-md-12">
       <form method="post" action="/">
         <div class="form-group">
-          <label for="name">Message</label>
-          <textarea class="form-control" rows="3" id="textbox" name="textbox"></textarea>
-        </div>
+          <textarea class="form-control" rows="3" id="textbox" name="textbox" placeholder="Message"></textarea>
+          <input class="form-control" rows="1" id="textbox" style="margin: 5px 0px 5px 0px" name="phnum" placeholder="Phone number"></input>
+          <input class="form-control" rows="1" id="textbox" style="margin: 5px 0px 5px 0px" name="carrier" placeholder="Cell Carrier"></input>
         <button type="submit" class="btn btn-submit" id="send" style="margin-bottom: 15px">Send</button>
       </form>
     </div>
-
+  </div>
   </div>
   <div class="col-md-12">
     <div class="panel panel-primary" style="text-align: center">
@@ -63,7 +63,6 @@
     </div>
       <br>
     </div>
-  </div>
 </div>
 
 {% include 'footer.html' %}
