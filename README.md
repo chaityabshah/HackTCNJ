@@ -9,3 +9,5 @@ Currently, the application lets you send messages simply by flexing your fist, w
 The original intent of this application was to simply give a better alternative to voice typing in the car, however it has evolved into more than that, opening doors for everyone, include everyone from those who are mute, to those who own cars.
 
 For the myo lua file please see this repository: https://github.com/chaityabshah/myomessenger.
+
+ChallengePost Submission: http://challengepost.com/software/myomessenger
